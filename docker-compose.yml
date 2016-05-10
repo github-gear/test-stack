@@ -1,4 +1,5 @@
 version: '2'
+
 services:
   jenkins:
     build: ./fs-jenkins
@@ -7,3 +8,72 @@ services:
     ports:
       - "8080:8080"
       - "50000:50000"
+    depends_on:
+      - gitlab
+  db2:
+    image: postgres
+    environment:
+      - POSTGRES_USER=gitlab
+      - POSTGRES_PASSWORD=gitlab
+      - POSTGRES_DB=gitlab
+  gitlab:
+    image: sameersbn/gitlab:8.3.2
+    ports:
+      - "10080:80"
+      - "10022:22"
+    depends_on:
+      - db2
+      - redis
+    environment:
+      - DB_HOST=db2
+      - DB_NAME=gitlab
+      - DB_USER=gitlab
+      - DB_PASS=gitlab
+      - REDIS_HOST=redis
+
+      - TZ=Asia/Kuala_Lumpur
+      - GITLAB_TIMEZONE=Asia/Kuala_Lumpur
+
+      - GITLAB_SECRETS_DB_KEY_BASE=long-and-random-alphanumeric-string
+      - GITLAB_ROOT_PASSWORD=123123123
+      - GITLAB_ROOT_EMAIL=admin@example.com
+
+      - OAUTH_GITHUB_API_KEY=49ee61869aa2135595a0
+      - OAUTH_GITLAB_APP_SECRET=70caeff3023a868d80b80a846ecbccb5d3b040b2
+
+      - GITLAB_HOST=localhost
+      - GITLAB_PORT=10080
+      - GITLAB_SSH_PORT=10022
+
+      - GITLAB_NOTIFY_ON_BROKEN_BUILDS=true
+      - GITLAB_NOTIFY_PUSHER=false
+
+      - GITLAB_EMAIL=notifications@example.com
+      - GITLAB_EMAIL_REPLY_TO=noreply@example.com
+      - GITLAB_INCOMING_EMAIL_ADDRESS=reply@example.com
+
+      - GITLAB_BACKUPS=daily
+      - GITLAB_BACKUP_TIME=01:00
+
+      - SMTP_ENABLED=false
+      - SMTP_DOMAIN=www.example.com
+      - SMTP_HOST=smtp.gmail.com
+      - SMTP_PORT=587
+      - SMTP_USER=mailer@example.com
+      - SMTP_PASS=password
+      - SMTP_STARTTLS=true
+      - SMTP_AUTHENTICATION=login
+
+      - IMAP_ENABLED=false
+      - IMAP_HOST=imap.gmail.com
+      - IMAP_PORT=993
+      - IMAP_USER=mailer@example.com
+      - IMAP_PASS=password
+      - IMAP_SSL=true
+      - IMAP_STARTTLS=false
+    volumes:
+      - ./fs-gitlab/home/git/data:/home/git/data
+  redis:
+    image: sameersbn/redis:latest
+    volumes:
+      - ./fs-gitlab/var/lib/redis:/var/lib/redis
