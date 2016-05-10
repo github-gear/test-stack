@@ -1,0 +1,5 @@
+Started by GitLab push by call-me-X
+Building in workspace /var/jenkins_home/workspace/freestyle fs
+[freestyle fs] $ /bin/sh -xe /tmp/hudson5180400027440417171.sh
++ echo /var/jenkins_home/workspace/freestyle fs
+Finished: SUCCESS
