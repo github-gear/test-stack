@@ -39,7 +39,7 @@ services:
       - GITLAB_ROOT_EMAIL=admin@example.com
 
       - OAUTH_GITHUB_API_KEY=49ee61869aa2135595a0
-      - OAUTH_GITLAB_APP_SECRET=70caeff3023a868d80b80a846ecbccb5d3b040b2
+      - OAUTH_GITHUB_APP_SECRET=70caeff3023a868d80b80a846ecbccb5d3b040b2
 
       - GITLAB_HOST=localhost
       - GITLAB_PORT=10080

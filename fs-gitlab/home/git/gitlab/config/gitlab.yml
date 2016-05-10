@@ -263,7 +263,7 @@ production: &base
   ## OmniAuth settings
   omniauth:
     # Allow login via Twitter, Google, etc. using OmniAuth providers
-    enabled: false
+    enabled: true
 
     # Uncomment this to automatically sign in with a specific omniauth provider's without
     # showing GitLab's sign-in page (default: show the GitLab sign-in page)
@@ -286,6 +286,11 @@ production: &base
     # arguments, followed by optional 'args' which can be either a hash or an array.
     # Documentation for this is available at http://doc.gitlab.com/ce/integration/omniauth.html
     providers:
+      - { name: 'github',
+          label: 'GitHub',
+          app_id: '49ee61869aa2135595a0',
+          app_secret: '70caeff3023a868d80b80a846ecbccb5d3b040b2',
+          args: { scope: 'user:email' } }
 
 
   # Shared file storage settings

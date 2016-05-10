@@ -10,3 +10,9 @@ pwd
 cat ~/.ssh/id_rsa.pub 
 exit
 exit
+vim
+exit
+cat ~/.ssh/id_rsa.pub
+ps -ef | grep jenkins
+cat ~/.ssh/id_rsa.pub
+exit

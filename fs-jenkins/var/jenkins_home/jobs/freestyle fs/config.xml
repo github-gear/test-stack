@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
-  <description>asdadkasdkjaslkdjaklsdjklaj</description>
+  <actions/>
+  <description>asdadkasdkj aslkdjaklsdjklaj</description>
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty plugin="gitlab-plugin@1.2.2">
@@ -12,7 +13,24 @@
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers/>
+  <triggers>
+    <com.dabsquared.gitlabjenkins.GitLabPushTrigger plugin="gitlab-plugin@1.2.2">
+      <spec></spec>
+      <triggerOnPush>true</triggerOnPush>
+      <triggerOnMergeRequest>true</triggerOnMergeRequest>
+      <triggerOpenMergeRequestOnPush>never</triggerOpenMergeRequestOnPush>
+      <ciSkip>true</ciSkip>
+      <setBuildDescription>true</setBuildDescription>
+      <addNoteOnMergeRequest>true</addNoteOnMergeRequest>
+      <addCiMessage>false</addCiMessage>
+      <addVoteOnMergeRequest>true</addVoteOnMergeRequest>
+      <branchFilterType>All</branchFilterType>
+      <includeBranchesSpec></includeBranchesSpec>
+      <excludeBranchesSpec></excludeBranchesSpec>
+      <targetBranchRegex></targetBranchRegex>
+      <acceptMergeRequestOnSuccess>false</acceptMergeRequestOnSuccess>
+    </com.dabsquared.gitlabjenkins.GitLabPushTrigger>
+  </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders/>
   <publishers/>
