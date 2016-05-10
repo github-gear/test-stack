@@ -1,7 +1,0 @@
-Started by GitLab push by call-me-X
-Building in workspace /var/jenkins_home/workspace/freestyle fs
-[freestyle fs] $ /bin/sh -xe /tmp/hudson2443883434919700173.sh
-+ exit 0
-[freestyle fs] $ /bin/sh -xe /tmp/hudson8615592962391364312.sh
-+ echo STILL RUN THIS OR NOT?
-Finished: SUCCESS
