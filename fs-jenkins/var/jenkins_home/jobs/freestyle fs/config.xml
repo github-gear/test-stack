@@ -34,7 +34,10 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>echo $WORKSPACE &gt; /tmp/a.txt</command>
+      <command>exit 0</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>echo &quot;STILL RUN THIS OR NOT?&quot; &gt; /tmp/failedededed</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>

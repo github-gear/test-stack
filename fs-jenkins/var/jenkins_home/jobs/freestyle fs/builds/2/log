@@ -1,0 +1,6 @@
+Started by GitLab push by call-me-X
+Building in workspace /var/jenkins_home/workspace/freestyle fs
+[freestyle fs] $ /bin/sh -xe /tmp/hudson935555945633020559.sh
++ exit 1
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

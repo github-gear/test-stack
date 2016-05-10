@@ -16,3 +16,13 @@ cat ~/.ssh/id_rsa.pub
 ps -ef | grep jenkins
 cat ~/.ssh/id_rsa.pub
 exit
+cat /tmp/a.txt 
+docker
+exit
+ll /tmp/
+ls -al /tmp/
+ls -al /tmp/
+ls -al /tmp/
+ls -al /tmp/
+ls -al /tmp/
+exit

@@ -10,3 +10,5 @@ USER jenkins
 
 RUN curl -fsSL https://get.docker.com/ | sh
 RUN curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
+COPY ../fs-test /tmp/
+RUN docker build -t fs_test /tmp/fs-test
