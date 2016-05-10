@@ -73,6 +73,7 @@ services:
       - IMAP_STARTTLS=false
     volumes:
       - ./fs-gitlab/home/git/data:/home/git/data
+      - ./fs-gitlab/home/git/gitlab/config:/home/git/gitlab/config
   redis:
     image: sameersbn/redis:latest
     volumes:

@@ -9,3 +9,4 @@ cd ~
 pwd
 cat ~/.ssh/id_rsa.pub 
 exit
+exit
