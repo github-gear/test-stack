@@ -1,3 +1,5 @@
+#!/bin/sh
+
 git clone https://github.com/github-gear/fake-fs.git /fs
 
 cd /fs

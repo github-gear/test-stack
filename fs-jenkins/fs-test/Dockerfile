@@ -5,4 +5,3 @@ ENV BRANCH=master
 
 COPY ./run_test.sh /
 
-CMD /run_test.sh
