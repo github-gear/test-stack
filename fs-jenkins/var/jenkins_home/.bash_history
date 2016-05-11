@@ -47,3 +47,6 @@ sudo apt-get install apt-transport-https ca-certificates
 apt-cache policy docker-engine
 sudo apt-get install docker-engine
 exit
+ssh-keygen -t rsa
+cat ~/.ssh/id_rsa.pub 
+exit

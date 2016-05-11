@@ -1,6 +1,6 @@
 FROM java:8-jdk
 
-RUN apt-get update && apt-get install -y git curl zip vim sudo && rm -rf /var/lib/apt/lists/*
+RUN apt-get -qq update && apt-get install -qq -y git curl zip vim sudo && rm -rf /var/lib/apt/lists/*
 
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
@@ -56,7 +56,6 @@ EXPOSE 50000
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 RUN curl -fsSL https://get.docker.com/ | sh
 RUN curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
-
 COPY fs-test /tmp/fs-test
 
 ENV COPY_REFERENCE_FILE_LOG $JENKINS_HOME/copy_reference_file.log
