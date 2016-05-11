@@ -4,6 +4,7 @@
     <com.dabsquared.gitlabjenkins.connection.GitLabConnection>
       <name></name>
       <url></url>
+      <apiTokenId>c0349dcc-4399-4f60-9449-7a7dc6329168</apiTokenId>
       <ignoreCertificateErrors>false</ignoreCertificateErrors>
     </com.dabsquared.gitlabjenkins.connection.GitLabConnection>
   </connections>
