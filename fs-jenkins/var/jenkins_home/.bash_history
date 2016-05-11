@@ -31,3 +31,19 @@ curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
 curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
 curl -fsSL https://get.docker.com/ | sh
 exit
+service docker status
+exit
+service docker status
+sudo curl -fsSL https://get.docker.com/ | sh
+docker version
+eval "$(docker-machine env default)"
+sudo systemctl status docker.service
+sudo apt-get install docker-engine
+apt-get purge lxc-docker*
+sudo apt-get purge lxc-docker*
+sudo apt-get purge docker.io*
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates
+apt-cache policy docker-engine
+sudo apt-get install docker-engine
+exit

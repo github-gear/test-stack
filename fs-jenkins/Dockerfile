@@ -54,7 +54,6 @@ EXPOSE 8080
 EXPOSE 50000
 
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
-
 RUN curl -fsSL https://get.docker.com/ | sh
 RUN curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
 
