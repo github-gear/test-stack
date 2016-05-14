@@ -1,0 +1,7 @@
+Started by GitLab push by call-me-X
+Building in workspace /var/jenkins_home/workspace/fs freestyle
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+[fs freestyle] $ /bin/sh -xe /tmp/hudson8199433326046296262.sh
++ echo hello
+Finished: SUCCESS

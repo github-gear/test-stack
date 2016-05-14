@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker exec teststack_gitlab_1 gitlab-rake gitlab:backup:restore BACKUP=111111 force=yes
