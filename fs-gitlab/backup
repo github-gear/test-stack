@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+BACKUP_FILE=$(docker exec teststack_gitlab_1 gitlab-rake gitlab:backup:create | grep 'gitlab_backup.tar' | cut -d" " -f4)
+docker cp teststack_gitlab_1:/var/opt/gitlab/backups/$BACKUP_FILE 111111_gitlab_backup.tar

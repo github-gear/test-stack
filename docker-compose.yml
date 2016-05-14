@@ -13,12 +13,24 @@ services:
       - gitlab
   gitlab:
     build: ./fs-gitlab
+    restart: always
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        gitlab_rails['omniauth_providers'] = [
+          {
+            "name" => "github",
+            "app_id" => "49ee61869aa2135595a0",
+            "app_secret" => "70caeff3023a868d80b80a846ecbccb5d3b040b2",
+            "args" => { "scope" => "user:email" }
+          }
+        ]
     ports:
-      - "10080:80"
-      - "10022:22"
-    #volumes:
-      #- ./fs-gitlab/var/opt/gitlab:/var/opt/gitlab
-      #- ./fs-gitlab/etc/gitlab:/etc/gitlab
+      - '10080:80'
+      - '10022:22'
+    volumes:
+      - /etc/gitlab
+      - /var/log/gitlab
+      - /var/opt/gitlab
   #db2:
     #image: postgres
     #environment:
